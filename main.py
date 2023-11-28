@@ -1,9 +1,9 @@
 from art import logo
+
 print(logo)
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-# Function
 def caesar(cipher_direction, start_text, shift_amount):
 
     end_text = []
@@ -11,10 +11,12 @@ def caesar(cipher_direction, start_text, shift_amount):
 
       if char in alphabet:
         index = alphabet.index(char)
+          
         if direction == "encode": 
           new_index = (index + shift_amount) % len(alphabet)
         elif direction == "decode":
           new_index = (index - shift_amount) % len(alphabet)
+        
         end_text.append(alphabet[new_index])
 
         end_text.append(char) 
@@ -34,6 +36,7 @@ while should_continue:
   caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
 
   user_choice = input("🎩 Type 'yes' if you want to go again. Otherwies type 'no': \n").lower()
+    
   if user_choice == "no":
     should_continue = False
     print("\n Goodbye 👋 ")
